@@ -1,0 +1,21 @@
+version: '3'
+services:
+  gitlab:
+    image: 'gitlab/gitlab-ce:latest'
+    environment:
+      GITLAB_IP: ${GITLAB_IP}
+      GITLAB_PORT: ${GITLAB_PORT}
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://${GITLAB_IP}:${GITLAB_PORT}'
+        gitlab_rails['gitlab_shell_ssh_port'] = 2222
+        nginx['listen_port'] = 80
+    ports:
+      - '${GITLAB_PORT}:80'
+      - '2222:22'
+    volumes:
+      - ./backup:/var/opt/backup
+      - gitlab-config:/etc/gitlab
+      - gitlab-datas:/var/opt/gitlab
+volumes:
+  gitlab-config:
+  gitlab-datas:

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+export GITLAB_RUNNER_NAMESPACE=gitlab-runner-ns
+# GitLab - GitLab Runner 間で通信可能な IP を設定する。
+export GITLAB_IP=$(/sbin/ip -o -4 addr list eth0 | awk '{print $4}' | cut -d/ -f1)
+export GITLAB_PORT=3002
+# GitLab Runner が実行対象とするタグを指定する。
+export GITLAB_RUNNER_TAGS=
+
+# GitLab 起動後に /admin/runners で「Registration token」を押下し「Registration token」を取得し設定する。
+export RUNNER_REGISTRATION_TOKEN=
+# GItLab 起動後に /-/profile/personal_access_tokens で Personal Access Token を取得し設定する。
+export PERSONAL_ACCCESS_TOKEN=
