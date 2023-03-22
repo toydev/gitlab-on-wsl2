@@ -58,3 +58,10 @@ if [ "$?" != "0" ]; then
     sudo apt-get update
     sudo apt-get install helm
 fi
+
+jq --version > /dev/null 2>&1
+if [ "$?" != "0" ]; then
+    echo "[$(date "+%Y/%m/%d %H:%M:%S")] jq をインストールします。"
+
+    sudo apt-get -y install jq
+fi

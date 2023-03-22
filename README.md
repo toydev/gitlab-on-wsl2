@@ -9,7 +9,7 @@ WSL2 の Ubuntu 22.04 上で以下を動かします。
 
 - 前準備をする。
 
-前提ソフトウェア（docker / kubectl / minikube / helm）をインストールします。
+前提ソフトウェア（docker / kubectl / minikube / helm / jq）をインストールします。
 一般ユーザで実行してください。whoami でユーザ名を参照している処理があります。必要な個所は sudo で実行しているので求められたらパスワードを入力してください。
 
 ```
