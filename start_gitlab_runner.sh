@@ -30,4 +30,6 @@ cat << EOL
 
 以下のページで Online の Runner が１つあることを確認できれば成功です。
 http://${GITLAB_IP}:${GITLAB_PORT}/admin/runners
+
+初回起動はコンテナイメージのダウンロードも含むため確認できるまで少し掛かります。
 EOL
